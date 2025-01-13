@@ -1,0 +1,112 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-family: "Roboto", serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    text-transform: capitalize;
+    font-weight: 700;
+    color: #0E0E0E;
+    padding: 1.5em 0.5em;
+}
+
+.header-logo {
+    display: flex;
+    gap: 0.5em;
+    margin-right: auto;
+}
+
+header img {
+    max-width: 30vh
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.hidden {
+    display: none;
+}
+
+.bars-open, .bars-closed {
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.menu-list {
+    display: none;
+    position: absolute;
+    background-color: #FFF;
+    padding: 0.5em;
+    border-radius: 0.2em;
+    top: 5rem;
+    right: 0.5rem;
+}
+
+.menu-list li {
+    margin-bottom: 0.5rem;
+}
+
+.menu-list li:hover, .menu-list li:focus {
+    text-decoration: underline;
+}
+
+.menu-list.show {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-section {
+    font-family: "Source Sans 3", serif;
+    background: url('./assets/article-image-hero.png') no-repeat;
+    width: 100vw;
+    color: #FFF;
+    padding: 2em 1em 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-section p {
+    width: 90vw;
+    padding: 1em 0;
+    text-shadow: 2px 2px 5px black;
+}
+
+.hero-section h1 {
+    width: 80vw;
+}
+
+.hero-section .hero-info {
+    line-height: 1.3;
+    font-weight: 500;
+}
+
+footer {
+    position: fixed;
+    width: 100vw;
+    background-color: #202020;
+    padding: 1em 0.5em;
+    text-align: center;
+    text-transform: capitalize;
+    bottom: 0;
+    left: 0;
+}
+
+footer h3 {
+    color: #ececec;
+    margin-bottom: 0.2em;
+}
+
+footer p {
+    color: #d7d7d7;
+}
