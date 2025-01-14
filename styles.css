@@ -65,6 +65,10 @@ nav ul {
     flex-direction: column;
 }
 
+main {
+    margin-bottom: 5rem;
+}
+
 .hero-section {
     font-family: "Source Sans 3", serif;
     background: url('./assets/article-image-hero.png') no-repeat;
@@ -105,13 +109,13 @@ nav ul {
         ".... info ...."
         ".... .... ...."
     ;
-    margin-bottom: 5rem;
 
 }
 
 .blog-img {
     grid-area: image;
-    width: 100%;
+    max-width: 90vw;
+    margin: 0 auto;
 }
 
 .blog-title {
