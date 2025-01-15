@@ -228,7 +228,7 @@ footer p {
     }
 
     .blog-section {
-        margin-top: -4rem;
+        margin-top: 1rem;
         display: grid;
         max-width: 100%;
         grid-template-columns: 1fr 1fr; /* Creates 2 equal columns */
