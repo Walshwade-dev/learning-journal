@@ -224,7 +224,7 @@ footer p {
     }
 
     .container section{
-       margin-bottom: 6rem;
+       margin-bottom: 1rem;
     }
 
     .blog-section {
@@ -278,6 +278,15 @@ footer p {
 
     .blog-info {
         width: 100%;
+    }
+
+
+    #show-more-btn {
+        margin-bottom: 8rem;
+    }
+
+    footer {
+        left: 0;
     }
 
 }
