@@ -90,11 +90,21 @@ function renderBlogs() {
         // Append the blog post container to the main blog container
         blogContainer.appendChild(blogDiv);
 
-        const blogsPerRow = 2; // Change this based on your layout
+        // Determine if the last item should span 2 or 3 columns based on screen size
+        const blogsPerRow = 3; // Default to 3 columns on larger screens
+
+        // Check if the current blog is the last item
         const isLastItemAlone = (index + 1) % blogsPerRow === 1 && index === blogs.length - 1;
 
         if (isLastItemAlone) {
-            blogDiv.classList.add('span-two-columns');
+            const screenWidth = window.innerWidth;
+
+            // If the screen width is smaller than 900px, span 2 columns; otherwise, span 3 columns
+            if (screenWidth < 900) {
+                blogDiv.classList.add('span-two-columns');
+            } else {
+                blogDiv.classList.add('span-three-columns');
+            }
         }
     });
 

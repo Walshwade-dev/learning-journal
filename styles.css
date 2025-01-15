@@ -290,3 +290,66 @@ footer p {
     }
 
 }
+
+@media(min-width: 900px) {
+    .hidden {
+        display: none;
+    }
+
+    .container {
+        max-width: 80vw;
+        margin: 0 auto;
+    }
+
+    header {
+        min-height: 5vh;
+        font-size: larger;
+    }
+
+    .full-menu {
+        display: flex;
+    }
+
+    .hero-section {
+        min-height: 60vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        padding: 5em 1em;
+    }
+
+    .hero-section h1, .hero-section p {
+        text-align: left;
+        width: 100%;
+    }
+
+    .hero-title, .hero-info {
+        max-width: 60vh;
+    }
+
+    .blog-section {
+        margin-top: 1rem;
+        display: grid;
+        max-width: 100%;
+        grid-template-columns: repeat(3, 1fr); /* Creates 12 equal columns */
+        gap: 20px; /* Space between grid items */
+    }
+
+    /* Ensure that the last item spans two columns */
+    .span-three-columns {
+        grid-column: span 3;
+    }
+
+    .blog-post.span-three-columns {
+        max-width: 50vw;
+        justify-self: center;
+        align-self: center;
+        margin: 0 auto;
+    }
+
+    .blog-post.span-three-columns .img-container {
+        display: flex;
+        justify-content: center;
+    }
+}
