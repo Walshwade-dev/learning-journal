@@ -8,6 +8,7 @@
     font-family: "Roboto", serif;
 }
 
+
 header {
     display: flex;
     align-items: center;
@@ -116,6 +117,10 @@ main {
 
 }
 
+.blog-post.hidden {
+    display: none;
+}
+
 .img-container {
     grid-area: image;
     width: 90vw;
@@ -142,6 +147,24 @@ main {
     width: 90vw;
 }
 
+button {
+    all: unset;
+    width: 80%;
+    margin: 0 auto;
+}
+
+#show-more-btn {
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1em;
+    color: #0E0E0E;
+    margin: 0 auto;
+    padding: 0.5em 0;
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+    letter-spacing: 0.2em;
+}
 
 footer {
     position: fixed;

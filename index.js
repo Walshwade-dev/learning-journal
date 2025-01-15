@@ -9,16 +9,14 @@ barsMenu.addEventListener('click', () => {
     barsOpen.classList.toggle('hidden');
     barsClosed.classList.toggle('hidden');
 
-    let menuEl = document.querySelector('.menu-list')
+    let menuEl = document.querySelector('.menu-list');
 
-    if(!barsClosed.classList.contains('hidden')){
+    if (!barsClosed.classList.contains('hidden')) {
         menuEl.style.display = 'block';
     } else {
         menuEl.style.display = 'none';
     }
-
-
-})
+});
 
 // Get the current date
 const currentDate = new Date();
@@ -37,17 +35,7 @@ const formattedDate = `${month} ${day}, ${year}`;
 document.querySelector('.current-date').textContent = formattedDate;
 document.querySelector('#current-year').textContent = year;
 
-
-
-function generateUniqueRandomClass(availableNumbers) {
-    // Get a random index from the available numbers
-    const randomIndex = Math.floor(Math.random() * availableNumbers.length);
-    // Pop the number at the random index to ensure it's unique
-    const randomNumber = availableNumbers.splice(randomIndex, 1)[0];
-    return `grid-item-${randomNumber}`;
-}
-
-
+let showMore = false;
 
 function renderBlogs() {
     let blogContainer = document.querySelector('.blog-section');
@@ -55,18 +43,15 @@ function renderBlogs() {
 
     const numBlogs = blogs.length;
 
-    let availableNumbers = Array.from({length: numBlogs}, (_, i) => i + 1)
-
     // Loop through each blog post and create HTML elements
     blogs.forEach((blog, index) => {
-
-        const randomClass = generateUniqueRandomClass(availableNumbers);
         // Create the blog post container div
         const blogDiv = document.createElement('div');
-        blogDiv.classList.add('blog-post', randomClass);
+        blogDiv.classList.add('blog-post');
+        blogDiv.setAttribute('id', `blog-${index + 1}`);  // Set a unique ID for each blog post
 
-
-        if(index >= 4) {
+        // Hide the blog posts with index >= 4 initially
+        if (index >= 4 && !showMore) {
             blogDiv.classList.add('hidden');
         }
 
@@ -105,7 +90,6 @@ function renderBlogs() {
         // Append the blog post container to the main blog container
         blogContainer.appendChild(blogDiv);
 
-
         const blogsPerRow = 2; // Change this based on your layout
         const isLastItemAlone = (index + 1) % blogsPerRow === 1 && index === blogs.length - 1;
 
@@ -115,17 +99,19 @@ function renderBlogs() {
     });
 
     const showMoreBtn = document.getElementById('show-more-btn');
-    let showMore = false; 
-
+    
     showMoreBtn.addEventListener('click', () => {
-        const hiddenBlogs = document.querySelectorAll('.blog-post.hidden');
-        hiddenBlogs.forEach(blog => {
-            blog.style.display = showMore ? 'none' : 'block';
-        });
-
-        showMoreBtn.textContent = showMore ? 'Show More' : 'Show Less';
         showMore = !showMore;
-    })
+
+        // Toggle visibility of blogs with id >= 5 based on showMore state
+        for (let i = 4; i < blogs.length; i++) {
+            const blogDiv = document.getElementById(`blog-${i + 1}`);
+            blogDiv.classList.toggle('hidden');  // Toggle visibility
+        }
+
+        // Change button text based on the state of showMore
+        showMoreBtn.textContent = showMore ? 'Show Less' : 'Show More'; 
+    });
 }
 
 // Call the renderBlogs function to render the blog posts
