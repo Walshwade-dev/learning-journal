@@ -1,5 +1,25 @@
 import { blogPosts as blogs } from './data.js';
 
+const barsMenu = document.querySelector('.menu-bars-container');
+
+barsMenu.addEventListener('click', () => {
+    let barsOpen = document.querySelector('.bars-open');
+    let barsClosed = document.querySelector('.bars-closed');
+
+    barsOpen.classList.toggle('hidden');
+    barsClosed.classList.toggle('hidden');
+
+    let menuEl = document.querySelector('.menu-list')
+
+    if(!barsClosed.classList.contains('hidden')){
+        menuEl.style.display = 'block';
+    } else {
+        menuEl.style.display = 'none';
+    }
+
+
+})
+
 // Get the current date
 const currentDate = new Date();
 const monthNames = [
