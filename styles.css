@@ -116,16 +116,21 @@ main {
 
 }
 
-.blog-img {
+.img-container {
     grid-area: image;
-    width: 100%;
+    width: 90vw;
+}
+
+.blog-img {
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
     height: auto;
-    margin: 0 auto;
 }
 
 .blog-title {
     grid-area: title;
-    width: 90vw;
+    width: 85vw;
 }
 
 .blog-date {
