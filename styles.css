@@ -164,6 +164,9 @@ footer p {
 }
 
 @media (min-width: 620px) {
+
+    .hidden { display: none;}
+
     .container {
         max-width: 90vw;
         margin: 0 auto;
