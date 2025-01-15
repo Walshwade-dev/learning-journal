@@ -20,7 +20,7 @@ export const blogPosts = [
     {
       title: "Building My First Interactive Web App with JavaScript",
       date: "2025-02-03",
-      image: "./assets/article-image-01.png",
+      image: "./assets/blog-image-05.png",
       content: "I just completed my first interactive web app using JavaScript! It was so rewarding to see the code I wrote come to life. I learned about event listeners, manipulating the DOM, and updating the content of a webpage dynamically. It's a huge confidence booster!"
     },
     {
@@ -32,13 +32,13 @@ export const blogPosts = [
     {
       title: "Working on My First React Project",
       date: "2025-02-17",
-      image: "./assets/article-image-02.png",
+      image: "./assets/blog-image-01.png",
       content: "I'm now building my first full project using React! It feels like everything I've learned so far is coming together. I'm implementing routing with React Router, managing state with hooks, and using APIs to fetch data. It's an exciting challenge, but I'm learning a lot!"
     },
     {
       title: "Debugging: How I Learned to Love the Process",
       date: "2025-02-24",
-      image: "./assets/article-image-03.png",
+      image: "./assets/blog-image-03.png",
       content: "This week, I had a breakthrough with debugging. I used to get frustrated when something didn't work, but now I see debugging as an essential part of the coding process. By learning how to read error messages and use browser developer tools, I'm able to solve problems more efficiently."
     }
   ];
