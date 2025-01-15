@@ -205,50 +205,29 @@ footer p {
         margin-top: -4rem;
         display: grid;
         max-width: 100%;
-        grid-template-columns: 1em 1fr 1fr 1em; /* Creates 2 columns with space on the sides */
-        grid-template-areas:
-            ".... .... .... ...." 
-            ".... grid-item-1 grid-item-2 ...."
-            ".... grid-item-3 grid-item-4 ...."
-            ".... grid-item-5 grid-item-6 ...."
-            ".... grid-item-7 grid-item-7 ...."
-            ".... .... .... ...."
-            ; /* Defines how the grid items are placed */
+        grid-template-columns: 1fr 1fr; /* Creates 2 equal columns */
         gap: 20px; /* Space between grid items */
     }
 
-
-    /* Optional: Adjust grid items to make sure they span correctly */
-    .grid-item-1 {
-        grid-area: grid-item-1;
+    /* Ensure that the last item spans two columns */
+    .span-two-columns {
+        grid-column: span 2;
     }
 
-    .grid-item-2 {
-        grid-area: grid-item-2;
+    .blog-post.span-two-columns {
+        max-width: 40vw;
+        justify-self: center;
+        align-self: center;
+        margin: 0 auto;
     }
 
-    .grid-item-3 {
-        grid-area: grid-item-3;
-    }
-
-    .grid-item-4 {
-        grid-area: grid-item-4;
-    }
-
-    .grid-item-5 {
-        grid-area: grid-item-5;
-    }
-
-    .grid-item-6 {
-        grid-area: grid-item-6;
-    }
-
-    .grid-item-7 {
-        grid-area: grid-item-7;
+    .blog-post.span-two-columns .img-container {
+        display: flex;
+        justify-content: center;
     }
 
     .blog-post {
-        max-width: 40vw;
+        max-width: 100%;
         object-fit: contain;
         border-radius: 0.5rem;
     }
@@ -256,11 +235,11 @@ footer p {
     .img-container {
         border-top-right-radius: 0.5rem;
         border-top-left-radius: 0.5rem;
-        width: 364px;
+        width: 100%;
     }
 
     .blog-img {
-        width: 100%;
+        max-width: 100%;
         object-fit: scale-down;
         object-position: center;
         border-top-right-radius: 0.5rem;
@@ -268,11 +247,11 @@ footer p {
     }
 
     .blog-title {
-        width: 38vw;
+        width: 100%;
     }
 
     .blog-info {
-        width: 35vw;
+        width: 100%;
     }
 
 }

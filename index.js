@@ -58,12 +58,17 @@ function renderBlogs() {
     let availableNumbers = Array.from({length: numBlogs}, (_, i) => i + 1)
 
     // Loop through each blog post and create HTML elements
-    blogs.forEach(blog => {
+    blogs.forEach((blog, index) => {
 
         const randomClass = generateUniqueRandomClass(availableNumbers);
         // Create the blog post container div
         const blogDiv = document.createElement('div');
         blogDiv.classList.add('blog-post', randomClass);
+
+
+        if(index >= 4) {
+            blogDiv.classList.add('hidden');
+        }
 
         // Create the img element for the blog post image
         const imgDiv = document.createElement('div');
@@ -99,7 +104,28 @@ function renderBlogs() {
 
         // Append the blog post container to the main blog container
         blogContainer.appendChild(blogDiv);
+
+
+        const blogsPerRow = 2; // Change this based on your layout
+        const isLastItemAlone = (index + 1) % blogsPerRow === 1 && index === blogs.length - 1;
+
+        if (isLastItemAlone) {
+            blogDiv.classList.add('span-two-columns');
+        }
     });
+
+    const showMoreBtn = document.getElementById('show-more-btn');
+    let showMore = false; 
+
+    showMoreBtn.addEventListener('click', () => {
+        const hiddenBlogs = document.querySelectorAll('.blog-post.hidden');
+        hiddenBlogs.forEach(blog => {
+            blog.style.display = showMore ? 'none' : 'block';
+        });
+
+        showMoreBtn.textContent = showMore ? 'Show More' : 'Show Less';
+        showMore = !showMore;
+    })
 }
 
 // Call the renderBlogs function to render the blog posts
